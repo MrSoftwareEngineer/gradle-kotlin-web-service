@@ -3,8 +3,16 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 group = "com.github.russian-coder.gradle-kotlin-webservice"
 version = project.properties["application.version"] as String
 
+buildscript {
+    repositories {
+        jcenter()
+        mavenCentral()
+        mavenLocal()
+    }
+}
+
 plugins {
-    id("org.jetbrains.kotlin.jvm") version "1.3.72"
+    kotlin("jvm") version "1.3.72"
     `maven-publish`
 }
 
